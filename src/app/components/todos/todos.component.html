@@ -1,0 +1,18 @@
+<div class="todos">
+  <div class="todo">Todo List</div>
+  <div class="todo_input">
+    <form (submit)="addTodo()">
+      <input
+        type="text"
+        name="inputTodo"
+        [(ngModel)]="inputTodo"
+        placeholder="Enter todo here...."
+      />
+      <button class="add_btn">Add</button>
+    </form>
+  </div>
+  <div class="todo_item" *ngFor="let todo of todos; let i = index">
+    <h1>{{ todo.content }}</h1>
+    <button class="remove_btn" (click)="deleteTodo(i)">Remove</button>
+  </div>
+</div>
